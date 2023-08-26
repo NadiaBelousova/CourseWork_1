@@ -1,7 +1,7 @@
 public class Employee {
-    private String nameOfEmployee;
+    private final String nameOfEmployee;
     private int department;
-    private double salary;
+    private int salary;
     private int id;
     private static int count;
 
@@ -26,14 +26,10 @@ public class Employee {
         return department;
     }
 
-    public double getSalary() {
+    public int getSalary() {
         return salary;
     }
 
-
-    public void setNameOfEmployee(String nameOfEmployee) {
-        this.nameOfEmployee = nameOfEmployee;
-    }
 
     public void setDepartment(int department) {
         this.department = department;
@@ -65,48 +61,65 @@ public class Employee {
 
     public static void showEmployee(Employee[] employees) {
         for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+            }
             System.out.println(employees[i].getId() + " " + employees[i].getNameOfEmployee() + ", " + employees[i].getDepartment() + ", " + employees[i].getSalary());
         }
     }
 
-    public static double sumSalary(Employee[] employees) {
-        double sum = 0;
+    public static int sumSalary(Employee[] employees) {
+        int sum = 0;
         for (int i = 0; i < employees.length; i++) {
-            sum = sum + employees[i].getSalary();
+            if (employees[i] != null) {
+            }
+            sum = (sum + employees[i].getSalary());
 
         }
         return sum;
     }
 
-    public static double maxSalary(Employee[] employees) {
-        double maxSalary = 0;
-        //  double minSalary = -1;
+    public static Employee maxSalary(Employee[] employees) {
+        int maxSalary = Integer.MIN_VALUE;
+        int index = 0;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].salary >= maxSalary) {
+            if (employees[i] != null && employees[i].salary >= maxSalary) {
                 maxSalary = employees[i].salary;
+                index = i;
             }
         }
-        return maxSalary;
+        return employees[index];
     }
 
-    public static double minSalary(Employee[] employees) {
-        double minSalary = employees[0].salary;
+    public static Employee minSalary(Employee[] employees) {
+        int minSalary = Integer.MAX_VALUE;
+        int index = 0;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].salary <= minSalary) {
+            if (employees[i] != null && employees[i].salary <= minSalary) {
                 minSalary = employees[i].salary;
+                index = i;
             }
         }
-        return minSalary;
+        return employees[index];
 
     }
 
     public static double middleSalary(Employee[] employees) {
-        double middleSalary = sumSalary(employees) / employees.length;
+        int k = 0;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                k++;
+            }
+        }
+        double middleSalary = (double) sumSalary(employees) / k;
         return middleSalary;
     }
 
-    public String toString() {
-        return nameOfEmployee;
+    public static void showEmployeeName(Employee[] employees) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+            }
+            System.out.println("ФИО сотрудника: " + employees[i].getNameOfEmployee());
+        }
     }
 }
 

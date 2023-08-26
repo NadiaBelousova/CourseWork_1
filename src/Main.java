@@ -21,11 +21,15 @@ public class Main {
         Employee.printSeparator();
         System.out.println("Сумма затрат на зарплаты в месяц - " + Employee.sumSalary(employee));
         Employee.printSeparator();
-        System.out.println("Максимальая зарплата - " + Employee.maxSalary(employee));
+        Employee employee1 = Employee.maxSalary(employee);
+        System.out.println("Работник с максимальной зарплатой в " + employee1.getSalary()+ " рублей это - " + employee1.getNameOfEmployee());
         Employee.printSeparator();
-        System.out.println("Минимальная зарплата - " + Employee.minSalary(employee));
+        Employee employee2 = Employee.minSalary(employee);
+        System.out.println("Работник с минимальной заплатой в  " + employee2.getSalary() +" рублей это - "+ employee2.getNameOfEmployee());
         Employee.printSeparator();
-        System.out.println("Среднее значение зарплат -" +Employee.middleSalary(employee));
+        System.out.println("Среднее значение зарплат " +Employee.middleSalary(employee));
+        Employee.printSeparator();
+        Employee.showEmployeeName(employee);
         Employee.printSeparator();
 
     }
