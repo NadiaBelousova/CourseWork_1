@@ -52,18 +52,18 @@ public class Employee {
     }
 
 
-    public int id(Employee[] employees) {
-        for (int i = 0; i < id; i++) {
-            Employee employee = employees[i];
-        }
-        return count;
-    }
+    //public int id(Employee[] employees) {
+       // for (int i = 0; i < id; i++) {
+        //    Employee employee = employees[i];
+       // }
+       // return count;
+   // }
 
     public static void showEmployee(Employee[] employees) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
+                System.out.println(employees[i].id + " " + employees[i].nameOfEmployee + ", " + employees[i].department + ", " + employees[i].salary);
             }
-            System.out.println(employees[i].getId() + " " + employees[i].getNameOfEmployee() + ", " + employees[i].getDepartment() + ", " + employees[i].getSalary());
         }
     }
 
@@ -71,20 +71,19 @@ public class Employee {
         int sum = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
+                sum = (sum + employees[i].salary);
             }
-            sum = (sum + employees[i].getSalary());
-
         }
         return sum;
     }
 
     public static Employee maxSalary(Employee[] employees) {
         int maxSalary = Integer.MIN_VALUE;
-        int index = 0;
+        int index=0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null && employees[i].salary >= maxSalary) {
                 maxSalary = employees[i].salary;
-                index = i;
+                index=i;
             }
         }
         return employees[index];
@@ -117,8 +116,9 @@ public class Employee {
     public static void showEmployeeName(Employee[] employees) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
+
+               System.out.println("ФИО сотрудника: " + employees[i].nameOfEmployee);
             }
-            System.out.println("ФИО сотрудника: " + employees[i].getNameOfEmployee());
         }
     }
 }
