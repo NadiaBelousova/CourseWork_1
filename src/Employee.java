@@ -62,8 +62,8 @@ public class Employee {
     public static void showEmployee(Employee[] employees) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
+                System.out.println(employees[i].getId() + " " + employees[i].getNameOfEmployee() + ", " + employees[i].getDepartment() + ", " + employees[i].getSalary());
             }
-            System.out.println(employees[i].getId() + " " + employees[i].getNameOfEmployee() + ", " + employees[i].getDepartment() + ", " + employees[i].getSalary());
         }
     }
 
@@ -71,9 +71,8 @@ public class Employee {
         int sum = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
-            }
             sum = (sum + employees[i].getSalary());
-
+        }
         }
         return sum;
     }
@@ -117,8 +116,9 @@ public class Employee {
     public static void showEmployeeName(Employee[] employees) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
-            }
+
             System.out.println("ФИО сотрудника: " + employees[i].getNameOfEmployee());
+            }
         }
     }
 }

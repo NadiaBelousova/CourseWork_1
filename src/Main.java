@@ -12,8 +12,7 @@ public class Main {
         employee[6] = new Employee("Зинаида Петровна Семенова", 3, 65000);
         employee[7] = new Employee("Давид Давидович Мартиросян", 5, 79000);
         employee[8] = new Employee("Анастасия Игоревна Турцкевич", 5, 70000);
-        employee[9] = new Employee("Лидия Ивановна Разумихина", 1, 35000);
-
+        //employee[9] = new Employee("Лидия Ивановна Разумихина", 1, 35000);
 
        Employee.showEmployee(employee);
         Employee.printSeparator();
